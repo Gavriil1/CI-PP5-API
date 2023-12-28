@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from posts.models import Post
 from likes.models import Like
+from PIL import Image as PILImage
 
 
 class PostSerializer(serializers.ModelSerializer):
