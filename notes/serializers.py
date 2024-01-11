@@ -1,11 +1,10 @@
 from rest_framework import serializers
-from posts.models import Notes
+from notes.models import Notes
 
-class PostSerializer(serializers.ModelSerializer):
+class NotesSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
-    profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
 
 
     def get_is_owner(self, obj):
@@ -13,9 +12,9 @@ class PostSerializer(serializers.ModelSerializer):
         return request.user == obj.owner
 
     class Meta:
-        model = Post
+        model = Notes  # Corrected model name
         fields = [
             'id', 'owner', 'is_owner', 'profile_id',
             'created_at', 'updated_at',
-            'title', 'content', 
+            'title', 'content',
         ]
