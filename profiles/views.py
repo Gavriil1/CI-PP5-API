@@ -15,9 +15,7 @@ class ProfileList(generics.ListAPIView):
         filters.OrderingFilter,
         DjangoFilterBackend,
     ]
-    filterset_fields = [
-        'owner__following__followed__profile',
-    ]
+
     ordering_fields = [
         'owner__post__created_at',  # Add the post creation time for ordering
     ]
