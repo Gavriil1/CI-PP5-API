@@ -1,11 +1,16 @@
+from django.db.models import Count
 from rest_framework import generics, permissions, filters
 from django_filters.rest_framework import DjangoFilterBackend
 from djangoapi.permissions import IsOwnerOrReadOnly
-from .models import Notes
-from .serializers import NotesSerializer
+from .models import Notes  # Fix import
+from .serializers import NotesSerializer  # Fix import
 
 class NotesList(generics.ListCreateAPIView):
-    serializer_class = NotesSerializer
+    """
+    List posts or create a post if logged in
+    The perform_create method associates the post with the logged in user.
+    """
+    serializer_class = NotesSerializer  # Fix serializer class
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     filter_backends = [
         filters.OrderingFilter,
@@ -22,20 +27,19 @@ class NotesList(generics.ListCreateAPIView):
     ]
 
     def get_queryset(self):
-        # Return only notes associated with the currently authenticated user
-        if self.request.user.is_authenticated:
-            return Notes.objects.filter(owner=self.request.user)
-        return Notes.objects.none()  # If not authenticated, return an empty queryset
+        return Notes.objects.filter(owner=self.request.user)
+
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+
 class NotesDetail(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = NotesSerializer
+    """
+    Retrieve a post and edit or delete it if you own it.
+    """
+    serializer_class = NotesSerializer  # Fix serializer class
     permission_classes = [IsOwnerOrReadOnly]
 
     def get_queryset(self):
-        # Return only the note owned by the currently authenticated user
-        if self.request.user.is_authenticated:
-            return Notes.objects.filter(owner=self.request.user)
-        return Notes.objects.none()  # If not authenticated, return an empty queryset
+        return Notes.objects.filter(owner=self.request.user)
