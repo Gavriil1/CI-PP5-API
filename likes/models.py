@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from posts.models import Post
 from notes.models import Notes
 
 
@@ -12,9 +11,6 @@ class Like(models.Model):
     'unique_together' makes sure a user can't like the same post twice.
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
-    post = models.ForeignKey(
-        Post, related_name='likes', on_delete=models.CASCADE
-    )
     notelike = models.ForeignKey(
         Notes, related_name='notelikes', on_delete=models.CASCADE, default=0
     )
@@ -22,7 +18,7 @@ class Like(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-        unique_together = ['owner', 'post']
+        unique_together = ['owner', 'notelike']
 
     def __str__(self):
-        return f'{self.owner} {self.post} {self.notelike}'
+        return f'{self.owner} {self.notelike}'
