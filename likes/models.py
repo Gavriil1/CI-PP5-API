@@ -12,7 +12,7 @@ class Like(models.Model):
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     notelike = models.ForeignKey(
-        Notes, related_name='notelikes', on_delete=models.CASCADE, default=0
+        Notes, related_name='notelike', on_delete=models.CASCADE, default=0
     )
     created_at = models.DateTimeField(auto_now_add=True)
 
