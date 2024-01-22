@@ -27,7 +27,7 @@ class NotesList(generics.ListCreateAPIView):
     ]
 
     def get_queryset(self):
-        return Notes.objects.filter(owner=self.request.user)
+        return Notes.objects.all()
 
 
     def perform_create(self, serializer):
@@ -42,4 +42,4 @@ class NotesDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
 
     def get_queryset(self):
-        return Notes.objects.filter(owner=self.request.user)
+        return Notes.objects.all()
