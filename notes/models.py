@@ -14,7 +14,7 @@ class Notes(models.Model):
     content = models.TextField(blank=True)
 
     class Meta:
-        ordering = ['-created_at']
+        ordering = ['-updated_at', '-created_at']
 
     def __str__(self):
         return f'{self.id} {self.title}'
