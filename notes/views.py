@@ -58,4 +58,4 @@ class NotesDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
 
     def get_queryset(self):
-        return Notes.objects.all()
+        return Notes.objects.filter(owner=self.request.user)
