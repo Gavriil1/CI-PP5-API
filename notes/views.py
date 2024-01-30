@@ -43,7 +43,9 @@ class NotesList(generics.ListCreateAPIView):
 
 
     def get_queryset(self):
-        return Notes.objects.all()
+        # return Notes.objects.all()
+        # return Notes.objects.filter(owner=self.request.user)
+        return Note.objects.filter(owner=user)
 
 
     def perform_create(self, serializer):
