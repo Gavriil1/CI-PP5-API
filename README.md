@@ -1,10 +1,10 @@
-# SnapFood API in DRF
+# Le NoteAPI in DRF
 
 **Developer: Aleksandra Haniok**
 
 💻 [Live link](https://snapfood-drf-api.onrender.com/)
 
-This repository contains the API set up using Django REST Framework for the SnapFood front-end application ([repository here](https://github.com/aleksandracodes/CI_PP5_Snapfood) and [live website here](https://ci-pp5-snapfood.onrender.com))
+This repository contains the API set up using Django REST Framework for "Le Note" front-end application ([repository here](https://github.com/Gavriil1/CI-PP5-API) and [live website here](https://ci-pp5-snapfood.onrender.com))
 
 ## Table of Contents
   - [User Stories](#user-stories)
@@ -17,49 +17,34 @@ This repository contains the API set up using Django REST Framework for the Snap
 ## User Stories
 
 The back-end section of the project focuses on its administration side and covers one user story:
-- As an admin, I want to be able to create, edit and delete the users, posts, comments and likes, so that I can have a control over the content of the application and remove any potential inappropriate content
+- As an admin, I want to be able to create, edit and delete the users, notes, likes, so that I can have a control over the content of the application and remove any potential inappropriate content
 
 
 ## Database
 
 The following models were created to represent the database model structure of the application:
-<img src="docs/readme/snapfood-database-diagram.png">
+<img src="docs/readme/db.png">
 
 #### User Model
 
 - The User model contains information about the user. It is part of the Django allauth library.
 - One-to-one relation with the Profile model owner field
-- ForeignKey relation with the Follower model owner and followed fields
-- ForeignKey relation with the Post model owner field
-- ForeignKey relation with the Comment model owner field
+- ForeignKey relation with the Notes model owner field
 - ForeignKey relation with the Like model owner field
 
 #### Profile Model
 
-- The Profile model contains the following fields: owner, name, description, created_on, updated_on and image
+- The Profile model contains the following fields: id, owner, created_at, updated_at, name, content, image
 - One-to-one relation between the owner field and the User model id field
 
-#### Post Model
+#### Notesd Model
 
-- The Post model contains the following fields: owner, created_on, updated_on, title, description, category and image
-- ForeignKey relation with the Comment model post field
+- The Post model contains the following fields: id, owner, created_at, updated_at, title, content
 - ForeignKey relation with the Like model post field
-
-#### Follower Model
-
-- The Follower model contains the following fields: owner, followed and created_on
-- ForeignKey relation between the owner field and the User model id field
-- ForeignKey relation between the followed field and the User model post field
-
-#### Comment Model
-
-- The Comment model contains the following fields: owner, post, created_on, updated_on and content
-- ForeignKey relation between the owner field and the User model id field
-- ForeignKey relation between the post field and the User model post field
 
 #### Like Model
 
-- The Like model contains the following fields: owner, post and created_on
+- The Like model contains the following fields: id, owner, post and created_at
 - ForeignKey relation between to the User model id field
 - ForeignKey relation between the owner field and the User model id field
 - ForeignKey relation between the post field and the Post model post field
@@ -83,7 +68,7 @@ The following models were created to represent the database model structure of t
 - [Git](https://git-scm.com/) was used for version control via Gitpod terminal to push the code to GitHub
 - [GitHub](https://github.com/) was used as a remote repository to store project code
 - [Gitpod)](https://gitpod.io/workspaces) - a virtual IDE workspace used to build this site
-- [Render Platform](https://render.com) was used to deploy the project into live environment
+- [Render Platform](https://heroku.com) was used to deploy the project into live environment
 - [Django REST Framework](https://www.django-rest-framework.org/) was used to build the back-end API
 - [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/index.html) was used for user authentication
 - [Pillow](https://pillow.readthedocs.io/en/stable/) was used for image processing and validation
