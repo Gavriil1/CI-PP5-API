@@ -81,7 +81,7 @@ The following models were created to represent the database model structure of t
 ## Validation
 
 ### PEP8 Validation
-[PEP8](http://pep8online.com/) Validation Service was used to check the code for PEP8 requirements. All the code passes with no errors or warnings.
+[PEP8](https://pep8ci.herokuapp.com/) Validation Service was used to check the code for PEP8 requirements. All the code passes with no errors or warnings.
 
 
 ## Testing
@@ -92,19 +92,17 @@ The following tests were carried out on the app:
 
 ### Manual testing of user stories
 
-- As an admin, I want to be able to create, edit and delete the users, posts, comments and likes, so that I can have a control over the content of the application and remove any potential inappropriate content
+- As an admin, I want to be able to create, edit and delete the users, notes,and likes, so that I can have a control over the content of the application and remove any potential inappropriate content
 
 **Test** | **Action** | **Expected Result** | **Actual Result**
 -------- | ------------------- | ------------------- | -----------------
 User | Create, update & delete user | A user can be created, edited or deleted | Works as expected
 User | Change permissions | User permissions can be updated | Works as expected
 Profile | Create, update & delete | User profile can be created, edited or deleted | Works as expected
-Post | Create, update & delete | A post can be created, edited or deleted | Works as expected
-Comment | Create, update & delete | A comment can be created, edited or deleted | Works as expected
+Note | Create, update & delete | A post can be created, edited or deleted | Works as expected
 Like | Create & delete | A like can be created or deleted (like / unlike post) | Works as expected
-Follower | Create & delete | Follow or unfollow user | Works as expected
 
-In addition, posts, comments, likes and following can be created by logged-in users only. Users can only update or delete the content which was created by themselves.
+In addition, notes,  likes  can be created by logged-in users only. Users can only update or delete the content which was created by themselves.
 
 <details><summary>Screenshots - USER</summary>
     <details><summary>Create user</summary>
@@ -191,6 +189,6 @@ Automated testing was done using the Django Rest Framework APITestCase (a very s
 
 ### Code
 
-This project was created based on the Code Institute's Django REST API walkthrough project ['Moments'](https://github.com/Code-Institute-Solutions/drf-api) which was a great learning experience.
+This project was created based on the Code Institute's Django REST API walkthrough project ['Moments'](https://github.com/Code-Institute-Solutions/drf-api).
 
 ##### Back to [top](#table-of-contents)
