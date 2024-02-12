@@ -86,9 +86,8 @@ The following models were created to represent the database model structure of t
 
 ## Testing
 
-The following tests were carried out on the app:
-1. Manual testing of user stories
-2. Automated testing
+The Manual test was carried out on the app:
+
 
 ### Manual testing of user stories
 
@@ -106,19 +105,23 @@ In addition, notes,  likes  can be created by logged-in users only. Users can on
 
 <details><summary>Screenshots - USER</summary>
     <details><summary>Create user</summary>
-    <img src="docs/testing/user-create-test.png">
+    <img src="docs/user_story_testing/create_user_1_api_test.png">
+    <img src="docs/user_story_testing/create_user_2_api_test.png">
+    <img src="docs/user_story_testing/create_user_3_api_test.png">
     </details>
     <details><summary>Change user permissions</summary>
-    <img src="docs/testing/user-change-permissions-test.png">
+    <img src="docs/user_story_testing/update_user_api_test.png">
     </details>
 </details>
 
 <details><summary>Screenshots - PROFILE</summary>
     <details><summary>Update profile</summary>
-    <img src="docs/testing/profile-update-test.png">
+    <img src="docs/user_story_testing/3-update-user-profile-1.png">
+    <img src="docs/user_story_testing/3-update-user-profile-2.png">
     </details>
         <details><summary>Delete profile</summary>
-    <img src="docs/testing/profile-delete-test.png">
+    <img src="docs/user_story_testing/4-delete_user_profile_1.png">
+    <img src="docs/user_story_testing/4-delete_user_profile_2.png">
     </details>
 </details>
 
@@ -165,17 +168,6 @@ In addition, notes,  likes  can be created by logged-in users only. Users can on
 </details>
 
 
-### Automated testing
-
-Automated testing was done using the Django Rest Framework APITestCase (a very similar to Django's TestCase). The report of overall testing was produced using the coverage tool (```$ coverage report``` & ```$ coverage html``` commands)
-
-- Tests summary
-
-<img src="docs/testing/apitestcase-snapfood.png">
-
-<details><summary>Detailed coverage report</summary>
-<img src="docs/testing/coverage-report-snapfood.jpg">
-</details>
 
 ##### Back to [top](#table-of-contents)
 
