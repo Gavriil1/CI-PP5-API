@@ -125,47 +125,33 @@ In addition, notes,  likes  can be created by logged-in users only. Users can on
     </details>
 </details>
 
-<details><summary>Screenshots - POST</summary>
-    <details><summary>Create post</summary>
-    <img src="docs/testing/post-create-test.png">
+<details><summary>Screenshots - Notes</summary>
+    <details><summary>Create note</summary>
+    <img src="docs/user_story_testing/5_create_note_api_test_1.png">
+    <img src="docs/user_story_testing/5_create_note_api_test_2.png">
     </details>
-    <details><summary>Update post</summary>
-    <img src="docs/testing/post-update-test.png">
+    <details><summary>Update note</summary>
+    <img src="docs/user_story_testing/6_update_note_api_test_1.png">
+    <img src="docs/user_story_testing/6_update_note_api_test_2.png">
     </details>
-    <details><summary>Delete post</summary>
-    <img src="docs/testing/post-delete-test.png">
-    </details>
-</details>
-
-<details><summary>Screenshots - COMMENT</summary>
-    <details><summary>Create comment</summary>
-    <img src="docs/testing/comment-create-test.png">
-    </details>
-    <details><summary>Update comment</summary>
-    <img src="docs/testing/comment-update-test.png">
-    </details>
-    <details><summary>Delete comment</summary>
-    <img src="docs/testing/comment-delete-test.png">
+    <details><summary>Delete note</summary>
+    <img src="docs/user_story_testing/7_delete_note_api_test_1.png">
+    <img src="docs/user_story_testing/7_delete_note_api_test_2.png">
     </details>
 </details>
 
 <details><summary>Screenshots - LIKE</summary>
     <details><summary>Create like - like post</summary>
-    <img src="docs/testing/like-create-test.png">
+    <img src="docs/user_story_testing/8_create_like_api_test_1.png">
+    <img src="docs/user_story_testing/8_create_like_api_test_2.png">
     </details>
     <details><summary>Delete like - unlike post</summary>
-    <img src="docs/testing/like-delete-test.png">
+    <img src="docs/user_story_testing/9_delete_like_api_test_1.png">
+    <img src="docs/user_story_testing/9_delete_like_api_test_2.png">
     </details>
 </details>
 
-<details><summary>Screenshots - FOLLOWER</summary>
-    <details><summary>Create - Follow user</summary>
-    <img src="docs/testing/follower-create-test.png">
-    </details>
-    <details><summary>Delete - Unfollow user</summary>
-    <img src="docs/testing/follower-delete-test.png">
-    </details>
-</details>
+
 
 
 
