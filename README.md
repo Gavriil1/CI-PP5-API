@@ -82,6 +82,10 @@ The following models were created to represent the database model structure of t
 ### PEP8 Validation
 [PEP8](https://pep8ci.herokuapp.com/) Validation Service was used to check the code for PEP8 requirements. All the code passes with no errors or warnings.
 
+In settings.py we have two long lines of code, which was not possible to make shorter:
+158: E501 line too long (88 > 79 characters): 'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+167: E501 line too long (80 > 79 characters): 'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+
 
 ## Testing
 
@@ -174,8 +178,8 @@ In addition, notes,  likes, feedback messages  can be created by logged-in users
 
 ### Images
 
-- User avatar default image taken from [here](https://community.atlassian.com/t5/Jira-questions/JIRA-Anonymous-users-can-t-see-user-avatars/qaq-p/1060103) and colors changed using Paint
-- Default post image found [here](https://www.fiverr.com/logo-maker/brief/logo_name?brief_id=0d212c49-2416-401d-99a5-780b9b233ff7) and tweaked with Paint
+- The default user avatar image is taken from the Code Institute walkthrough.
+- Website Logo was found on google.
 
 ### Code
 
