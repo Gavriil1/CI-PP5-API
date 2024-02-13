@@ -103,13 +103,13 @@ MIDDLEWARE = [
 ]
 
 if 'CLIENT_ORIGIN' in os.environ:
-    CORS_ALLOWED_ORIGINS = [
+     CORS_ALLOWED_ORIGINS = [
          os.environ.get('CLIENT_ORIGIN')
-    ]
+     ]
 if 'CLIENT_ORIGIN_DEV' in os.environ:
-    CORS_ALLOWED_ORIGIN_REGEXES = [
+     CORS_ALLOWED_ORIGIN_REGEXES = [
          r"^https://.*\.gitpod\.io$",
-    ]
+     ]
 
 CORS_ALLOW_CREDENTIALS = True
 
@@ -138,16 +138,17 @@ WSGI_APPLICATION = 'djangoapi.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 if 'DEV' in os.environ:
-    DATABASES = {
+     DATABASES = {
          'default': {
              'ENGINE': 'django.db.backends.sqlite3',
              'NAME': BASE_DIR / 'db.sqlite3',
          }
-    }
+     }
 else:
-    DATABASES = {
+     DATABASES = {
          'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-    }
+     }
+
 
 
 # Password validation
@@ -155,8 +156,7 @@ else:
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-     'NAME': 'django.contrib.auth.password_validation.'
-     'UserAttributeSimilarityValidator',
+     'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
      'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
@@ -165,8 +165,7 @@ AUTH_PASSWORD_VALIDATORS = [
      'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-     'NAME': 'django.contrib.auth.password_validation.'
-     'NumericPasswordValidator',
+     'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
