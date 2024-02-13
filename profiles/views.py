@@ -17,7 +17,7 @@ class ProfileList(generics.ListAPIView):
     List all profiles.
     No create view as profile creation is handled by django signals.
     """
-    permission_classes = [permissions.IsAuthenticated]  
+    permission_classes = [permissions.IsAuthenticated]
     queryset = Profile.objects.all().order_by('-created_at')
     serializer_class = ProfileSerializer
     filter_backends = [
@@ -26,13 +26,14 @@ class ProfileList(generics.ListAPIView):
     ]
 
     ordering_fields = [
-        'owner__post__created_at', 
+        'owner__post__created_at',
     ]
+
 
 class ProfileDetail(generics.RetrieveUpdateAPIView):
     """
     Retrieve or update a profile if you're the owner.
     """
-    permission_classes = [IsOwnerOrReadOnly, permissions.IsAuthenticated]  
+    permission_classes = [IsOwnerOrReadOnly, permissions.IsAuthenticated]
     queryset = Profile.objects.all().order_by('-created_at')
     serializer_class = ProfileSerializer

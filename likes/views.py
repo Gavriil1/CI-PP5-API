@@ -16,16 +16,18 @@ class LikeList(generics.ListCreateAPIView):
     """
     List likes or create a like if logged in.
     """
-    permission_classes = [permissions.IsAuthenticated]  
+    permission_classes = [permissions.IsAuthenticated]
     serializer_class = LikeSerializer
 
-    def get_queryset(self):  
+    def get_queryset(self):
         return Like.objects.filter(owner=self.request.user)
 
     def perform_create(self, serializer):
-        note = Notes.objects.filter(owner=self.request.user).get(id=self.request.data['post'])
+        note = Notes.objects.filter(owner=self.request.user)\
+            .get(id=self.request.data['post'])
         if note.owner != self.request.user:
-            raise permissions.PermissionDenied("You can only like your own notes.")
+            raise permissions.\
+                PermissionDenied("You can only like your own notes.")
         serializer.save(owner=self.request.user)
 
 
