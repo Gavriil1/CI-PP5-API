@@ -1,8 +1,16 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from rest_framework import generics, filters, permissions  # Added permissions
 from django_filters.rest_framework import DjangoFilterBackend
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Internal:
 from djangoapi.permissions import IsOwnerOrReadOnly
 from .models import Profile
 from .serializers import ProfileSerializer
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 class ProfileList(generics.ListAPIView):
     """

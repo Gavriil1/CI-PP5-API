@@ -1,5 +1,10 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from rest_framework import serializers
+# Internal:
 from notes.models import Notes
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class NotesSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
@@ -12,7 +17,7 @@ class NotesSerializer(serializers.ModelSerializer):
         return request.user == obj.owner
 
     class Meta:
-        model = Notes  # Corrected model name
+        model = Notes  
         fields = [
             'id', 'owner', 'is_owner', 'profile_id',
             'created_at', 'updated_at',

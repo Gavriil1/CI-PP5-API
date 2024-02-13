@@ -1,6 +1,10 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django.contrib import admin
-from .models import Notes
 
-# Register your models here.
+# Internal:
+from .models import Notes
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 admin.site.register(Notes)
