@@ -1,8 +1,10 @@
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from rest_framework import serializers
+# Internal:
 from .models import Contact
-
-from rest_framework import serializers
-from .models import Contact
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
