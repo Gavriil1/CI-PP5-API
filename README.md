@@ -1,10 +1,10 @@
 # Le NoteAPI in DRF
 
-**Developer: Aleksandra Haniok**
+**Developer: Gavriil Spyropoulos**
 
-💻 [Live link](https://snapfood-drf-api.onrender.com/)
+💻 [Live link](https://ci-p5-project-api-part-500c148fe358.herokuapp.com/)
 
-This repository contains the API set up using Django REST Framework for "Le Note" front-end application ([repository here](https://github.com/Gavriil1/CI-PP5-API) and [live website here](https://ci-pp5-snapfood.onrender.com))
+This repository contains the API set up using Django REST Framework for "Le Note" front-end application ([repository here](https://github.com/Gavriil1/CI-PP5-API) and [live website here](https://ci-p5-react-part-9d6b24103236.herokuapp.com/))
 
 ## Table of Contents
   - [User Stories](#user-stories)
@@ -17,7 +17,7 @@ This repository contains the API set up using Django REST Framework for "Le Note
 ## User Stories
 
 The back-end section of the project focuses on its administration side and covers one user story:
-- As an admin, I want to be able to create, edit and delete the users, notes, likes, so that I can have a control over the content of the application and remove any potential inappropriate content
+- As an admin, I want to be able to create, edit and delete the users, notes, likes, feedback messages so that I can have a control over the content of the application and remove any potential inappropriate content
 
 
 ## Database
@@ -37,7 +37,7 @@ The following models were created to represent the database model structure of t
 - The Profile model contains the following fields: id, owner, created_at, updated_at, name, content, image
 - One-to-one relation between the owner field and the User model id field
 
-#### Notesd Model
+#### Notes Model
 
 - The Post model contains the following fields: id, owner, created_at, updated_at, title, content
 - ForeignKey relation with the Like model post field
@@ -61,19 +61,18 @@ The following models were created to represent the database model structure of t
 
 ### Libraries & Tools
 
-- [APITestCase](https://www.django-rest-framework.org/api-guide/testing/) - Django Rest Framework APITestCase was used for automated testing
-- [Cloudinary](https://cloudinary.com/) to store static files
-- [Coverage](https://coverage.readthedocs.io/en/6.4.4/) used to produce automated testing report
-- [Dbdiagram.io](https://dbdiagram.io/home) used for the database schema diagram
-- [Git](https://git-scm.com/) was used for version control via Gitpod terminal to push the code to GitHub
-- [GitHub](https://github.com/) was used as a remote repository to store project code
-- [Gitpod)](https://gitpod.io/workspaces) - a virtual IDE workspace used to build this site
-- [Render Platform](https://heroku.com) was used to deploy the project into live environment
-- [Django REST Framework](https://www.django-rest-framework.org/) was used to build the back-end API
-- [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/index.html) was used for user authentication
+
+- [Cloudinary](https://cloudinary.com/) to store static  files.
+- [Dbdiagram.io](https://dbdiagram.io/home) used to create database diagram.
+- [Git](https://git-scm.com/) was used for version control. The versions were pushed from gitpod to github.
+- [GitHub](https://github.com/) The specified location served as a remote repository for storing project code.”
+- [Gitpod)](https://gitpod.io/workspaces) - was used as IDE
+- [Heroku](https://heroku.com) was used to deploy the project into live environment
+- [Django REST Framework](https://www.django-rest-framework.org/) was used to develop backend API website.
+- [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/index.html) was used as authentication plugin.
 - [Pillow](https://pillow.readthedocs.io/en/stable/) was used for image processing and validation
 - [Psycopg2](https://www.psycopg.org/docs/) was used as a PostgreSQL database adapter for Python
-- [PostgreSQL](https://www.postgresql.org/) – deployed project on Render uses a PostgreSQL database
+- [ElephantSQL](https://www.elephantsql.com/) – ElephantSQL was used during application development.
 
 ##### Back to [top](#table-of-contents)
 
@@ -100,8 +99,10 @@ User | Change permissions | User permissions can be updated | Works as expected
 Profile | Create, update & delete | User profile can be created, edited or deleted | Works as expected
 Note | Create, update & delete | A post can be created, edited or deleted | Works as expected
 Like | Create & delete | A like can be created or deleted (like / unlike post) | Works as expected
+Feedback Message | Create & delete | A Feedback message can be created or deleted  | Works as expected
 
-In addition, notes,  likes  can be created by logged-in users only. Users can only update or delete the content which was created by themselves.
+
+In addition, notes,  likes, feedback messages  can be created by logged-in users only. Users can only update or delete the content which was created by themselves.
 
 <details><summary>Screenshots - USER</summary>
     <details><summary>Create user</summary>
@@ -152,17 +153,14 @@ In addition, notes,  likes  can be created by logged-in users only. Users can on
 </details>
 
 <details><summary>Screenshots - Feedback Message</summary>
-    <details><summary>Create note</summary>
+    <details><summary>Create Feedbac message</summary>
     <img src="docs/user_story_testing/10_create_feedback_api_test_1.png">
     <img src="docs/user_story_testing/10_create_feedback_api_test_2.png">
     </details>
-    <details><summary>Update note</summary>
-    <img src="">
-    <img src="">
-    </details>
-    <details><summary>Delete note</summary>
-    <img src="">
-    <img src="">
+    <details><summary>Delete Feedback Message</summary>
+    <img src="docs/user_story_testing/11_delete_api_test_1.png">
+    <img src="docs/user_story_testing/11_delete_api_test_2.png">
+    <img src="docs/user_story_testing/11_delete_api_test_3.png">
     </details>
 </details>
 

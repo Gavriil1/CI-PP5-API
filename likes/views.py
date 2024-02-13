@@ -8,9 +8,11 @@ class LikeList(generics.ListCreateAPIView):
     """
     List likes or create a like if logged in.
     """
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [permissions.IsAuthenticated]  # Changed to IsAuthenticated
     serializer_class = LikeSerializer
-    queryset = Like.objects.all()
+
+    def get_queryset(self):  # Added get_queryset method
+        return Like.objects.filter(owner=self.request.user)
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -22,4 +24,6 @@ class LikeDetail(generics.RetrieveDestroyAPIView):
     """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = LikeSerializer
-    queryset = Like.objects.all()
+
+    def get_queryset(self):
+        return Like.objects.filter(owner=self.request.user)
