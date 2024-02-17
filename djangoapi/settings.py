@@ -62,7 +62,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
      os.environ.get('ALLOWED_HOST'),
-    'localhost',
+    'localhost', '*'
 ]
 
 
