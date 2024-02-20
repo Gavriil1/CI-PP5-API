@@ -1,10 +1,18 @@
-# Le NoteAPI in DRF
+# Le Note API in DRF
 
 **Developer: Gavriil Spyropoulos**
 
 💻 [Live link](https://ci-p5-project-api-part-500c148fe358.herokuapp.com/)
 
-This repository contains the API set up using Django REST Framework for "Le Note" front-end application ([repository here](https://github.com/Gavriil1/CI-PP5-API) and [live website here](https://ci-p5-react-part-9d6b24103236.herokuapp.com/))
+This repository contains the API set up using Django REST Framework for React "Le Note" front-end application ([repository here]( https://github.com/Gavriil1/cip5_application_react ) and [live website here](https://ci-p5-react-part-9d6b24103236.herokuapp.com/))
+
+The API is designed to support CRUD functionality of Note application:
+
+Key features:
+1. Notes: Functionality for Create, Update, Read, Delete, and Like.
+2. Profiles: Sign In, Sign Up functionality for the users. User’s username, password, and avatar update.
+3. Contact Form functionality.
+
 
 ## Table of Contents
   - [User Stories](#user-stories)
