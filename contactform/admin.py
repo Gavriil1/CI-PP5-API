@@ -5,4 +5,4 @@ from django.contrib import admin
 from .models import Contact
 
 # registration of Contact Form to admin panel
-admin.site.register(Contact, verbose_name="Feedback Form")
+admin.site.register(Contact)
